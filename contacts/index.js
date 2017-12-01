@@ -54,7 +54,7 @@ contacts.get('/contacts/:id', (req, res) => {
     }
     })
 
-contacts.get('/contacts',(req,res) => {
+contacts.get('/contacts?name=',(req,res) => {
     if(req.query.First_Name)
     {
         for(let i = 0; i<contact1.length; i++)
