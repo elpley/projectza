@@ -24,10 +24,10 @@ var contact1 = [
 ]
 
 
-contacts.get('/contacts/:name', (req, res) => {
+contacts.get('/contacts/:id', (req, res) => {
     let friend = req.body
     let index = contact1.findIndex((index) => {
-        if (friend.First_Name == contact1.First_Name) {
+        if (friend.id == contact1.id) {
             return index
         }
     })
