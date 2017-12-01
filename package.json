@@ -1,0 +1,23 @@
+{
+  "name": "projectza",
+  "version": "1.0.0",
+  "description": "zazaazaaaa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elpley/projectza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elpley/projectza/issues"
+  },
+  "homepage": "https://github.com/elpley/projectza#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
