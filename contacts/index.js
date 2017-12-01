@@ -1,6 +1,9 @@
 const express = require('express')
 const contacts = express.Router();
 
+function isEmptyOrSpaces(str){
+    return str === null || str.match(/^ *$/) !== null;
+}
 
 var contact1 = [
     {
@@ -24,10 +27,10 @@ var contact1 = [
 ]
 contacts.get('/contacts',(req,res) => res.json(contact1))
 
-contacts.post('/contacts',(req,res) => {
-    contact1.push(req.body)
-    res.json("เพิ่มข้อมูลสำเร็จ")
-})
+//contacts.post('/contacts',(req,res) => {
+//    contact1.push(req.body)
+ //   res.json("เพิ่มข้อมูลสำเร็จ")
+//})
 
 contacts.put('/contacts/:id',(req,res) =>{
     let id= req.params.id
@@ -64,8 +67,16 @@ contacts.get('/contacts',(req,res) => {
 )
 
 contacts.post('/contacts',(req,res) => {
-    contact1.push(req.body)
-    res.json("เพิ่มข้อมูลสำเร็จ")
+    let list = req.body
+    let text = []
+    text.push("ใส่ข้อมูลไม่ครบ.")
+    if(!isEmptyOrSpaces(list.First_Name) && (!isEmptyOrSpaces(list.email))){
+        contact1.push(list)
+        res.json("เพิ่มข้อมูลสำเร็จ")
+    }
+    else{
+        res.send(text)
+    }
 })
 
 contacts.put('/contacts/:id',(req,res) =>{
