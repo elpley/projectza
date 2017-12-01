@@ -61,6 +61,23 @@ contacts.post('/contacts',(req,res) => {
     contact1.push(req.body)
     res.json("เพิ่มข้อมูลสำเร็จ")
 })
+<<<<<<< HEAD
+
+contacts.put('/contacts/:id',(req,res) =>{
+    let id= req.params.id
+    for(let i=0;i<contact1.length;i++)
+    {
+        if(id == contact1[i].id)
+        {
+            contact1[i]=req.body
+        }
+    }
+    res.json("Success!!")
+})
+
+
+=======
+>>>>>>> c9131084c22f7ce7e20c5f09a2a1ed0a2090fef8
 module.exports = contacts
 
 
