@@ -21,4 +21,5 @@ var contact1 = [
         email: '58160316@go.buu.ac.th'
     }
 ]
+contacts.get('/contacts',(req,res) => res.json(contact1))
 module.exports = contacts
