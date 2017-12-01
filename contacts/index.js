@@ -36,15 +36,33 @@ contacts.get('/contacts/:id', (req, res) => {
 
 })
 
-module.exports = contacts
 
 
 
 
-contacts.get('/contacts',(req,res) => res.json(contact1))
+
+contacts.get('/contacts',(req,res) => {
+    if(req.query.First_Name)
+    {
+        for(let i = 0; i<contact1.length; i++)
+        {
+            if(req.query.First_Name == contact1[i].First_Name)
+            {
+                res.json(contact1[i])
+            }
+        }
+    }
+    else{
+        res.json(contact1)}
+    }
+)
 
 contacts.post('/contacts',(req,res) => {
     contact1.push(req.body)
     res.json("เพิ่มข้อมูลสำเร็จ")
 })
 module.exports = contacts
+
+
+
+
