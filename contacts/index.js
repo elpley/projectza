@@ -41,7 +41,7 @@ contacts.put('/contacts/:id',(req,res) =>{
     res.json("Success put!!")
 })
 
-<<<<<<< HEAD
+
 
 
 
@@ -67,7 +67,6 @@ contacts.post('/contacts',(req,res) => {
     contact1.push(req.body)
     res.json("เพิ่มข้อมูลสำเร็จ")
 })
-<<<<<<< HEAD
 
 contacts.put('/contacts/:id',(req,res) =>{
     let id= req.params.id
@@ -82,9 +81,7 @@ contacts.put('/contacts/:id',(req,res) =>{
 })
 
 
-=======
->>>>>>> c9131084c22f7ce7e20c5f09a2a1ed0a2090fef8
-=======
+
 contacts.delete('/contacts/:id',(req,res) =>{
     let id= req.params.id
     for(let i=0;i<contact1.length;i++)
@@ -99,7 +96,7 @@ contacts.delete('/contacts/:id',(req,res) =>{
 
 
 
->>>>>>> 848a1cfc494ea3b04a06faf9397160e0bf663c2e
+
 module.exports = contacts
 
 
