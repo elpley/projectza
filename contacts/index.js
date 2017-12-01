@@ -1,6 +1,7 @@
 const express = require('express')
 const contacts = express.Router();
 
+
 var contact1 = [
     {
         id: 1,
@@ -22,6 +23,7 @@ var contact1 = [
     }
 ]
 
+
 contacts.get('/contacts/:name', (req, res) => {
     let friend = req.body
     let index = contact1.findIndex((index) => {
@@ -38,3 +40,11 @@ module.exports = contacts
 
 
 
+
+contacts.get('/contacts',(req,res) => res.json(contact1))
+
+contacts.post('/contacts',(req,res) => {
+    contact1.push(req.body)
+    res.json("เพิ่มข้อมูลสำเร็จ")
+})
+module.exports = contacts
